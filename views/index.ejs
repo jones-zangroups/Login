@@ -1,0 +1,65 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ZanGroups Login</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Link to the CSS file in the 'public/css' folder -->
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="branding">
+                <!-- Update image source to point to the 'public/images' folder -->
+                <img src="/images/zan-logo.png.jpg" alt="ZanGroups Logo">
+            </div>
+            <div class="login-box">
+                <h2>Login</h2>
+                <form id="loginForm" action="/login" method="POST">
+                    <div class="input-group">
+                        <span class="material-icons">person</span>
+                        <input type="text" id="username" placeholder="Username or Email" required>
+                        <div class="error-message" id="usernameError"></div>
+                    </div>
+                    <div class="input-group">
+                        <span class="material-icons">lock</span>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <span class="material-icons" id="togglePassword">visibility</span>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="login-btn" id="loginBtn" disabled>Login</button>
+                    <div class="loading-spinner" id="loadingSpinner" style="display:none;"></div>
+                </form>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <div class="or-option">
+                    <h4>or</h4>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google">
+                        <img src="/images/google.png" alt="Google"> Login with Google
+                    </button>
+                    <button class="social-btn facebook">
+                        <img src="/images/facebook.png" alt="Facebook"> Login with Facebook
+                    </button> 
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div id="loading-indicator" style="display:none;">
+            <div class="border-spinner"></div>
+          </div>
+        
+
+        <!-- Include your JavaScript file here -->
+        <script src="/css/script.js"></script>
+
+
+    </body>
+    </html>

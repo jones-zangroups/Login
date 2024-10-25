@@ -1,0 +1,196 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #000000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Two-column layout */
+.login-container {
+  display: flex;
+
+  align-items: center;
+  background: #ffffff; /* Dark background for neon contrast */
+  border-radius: 12px;
+  width: 300%;
+  max-width: 800px;
+  max-height: 3000px;
+  box-sizing: flex;
+  box-shadow: 0 20px 40px rgba(193, 187, 187, 0.4); /* Subtle shadow */
+}
+
+/* Branding */
+.branding {
+  padding: 40px;
+  text-align: center;
+  color: #2a302f; /* Neon aqua color */
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16;
+  color: #444b4a; /* Neon heading */
+
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #333333; /* Dark background for inputs */
+  border-radius: 30px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #2a2b2b; /* Neon border */
+  box-shadow: 0 0 10px #1d1f1e, 0 0 20px #191b1a;
+}
+
+.input-group span {
+  color: #9e9e9e;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: transparent; /* Transparent input background */
+  color: white;
+  font-size: 16px;
+}
+
+#togglePassword {
+  cursor: pointer;
+  color: #919897; /* Neon toggle */
+  text-shadow: 0 0 10px #696868;
+}
+
+/* Remember me section */
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  color: #262c2b; /* Neon color */
+}
+
+/* Neon glowing button */
+.login-btn {
+  background: #000000;
+  color: white;
+  padding: 10px;
+  border-radius: 30px;
+  width: 100%;
+  border: black;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #313433, 0 0 20px #222323, 0 0 20px #151717;
+}
+
+.login-btn:hover {
+  box-shadow: 0 0 20px #232625, 0 0 60px #1b1b1b, 0 0 100px #101010;
+}
+
+.login-btn:disabled {
+  background: #cccccc;
+}
+
+/* Forgot password */
+.forgot-password {
+  color: #303231;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+h4{
+  color:#262c2b;
+  text-align: center;
+  
+}
+
+/* Social login buttons */
+.social-login {
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.social-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.google {
+  background: #db4437;
+  box-shadow: 0 0 10px #db4437, 0 0 30px #db4437;
+}
+
+.facebook {
+  background: #3b5998;
+  box-shadow: 0 0 10px #3b5998, 0 0 30px #3b5998;
+}
+
+.social-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-container {
+      flex-direction: column;
+  }
+
+  .login-box, .branding {
+      width: 100%;
+      border-radius: 12px;
+  }
+}
+
+
+
+/* Spinner container */
+#loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Spinner itself */
+.border-spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for rotating the spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
