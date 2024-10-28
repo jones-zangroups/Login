@@ -69,14 +69,46 @@ loginForm.addEventListener('submit', async function (e) {
         });
 
 
+        // if (response.ok) {
+        //     setTimeout(() => { 
+        //         window.location.href = "/welcome"; 
+        //     }, 1000);// Redirect on success
+        //     // If "Remember Me" is not checked, set auto-logout
+        //     if (!document.getElementById('rememberMe').checked) {
+        //         setTimeout(() => {
+        //             fetch('/logout'); // Trigger logout
+        //             alert('You have been logged out due to inactivity.');
+        //             window.location.href = '/'; // Redirect to login page
+        //         }, 15 * 1000); // Logout after 15 seconds
+        //     }
+        // } else {
+        //     // Get error message from the response and display it
+        //     const errorMessage = await response.text();
+        //     alert(errorMessage); // Show the specific error message
+        // }
         if (response.ok) {
-            setTimeout(() => { 
-                window.location.href = "/welcome"; 
-            }, 1000);// Redirect on success
-        } else {
-            // Get error message from the response and display it
+                        // Redirect immediately if login is successful
+                        window.location.href = "/welcome"; 
+            const rememberMe = document.getElementById('rememberMe').checked;
+            console.log('Login successful');
+
+            // If "Remember Me" is not checked, set auto-logout
+            if (!rememberMe) {
+                setTimeout(() => {
+                    fetch('/logout'); // Trigger logout
+                    alert('You have been logged out due to inactivity.');
+                    window.location.href = '/'; // Redirect to login page
+                }, 15 * 1000); // Logout after 15 seconds
+            } else {
+                // Redirect immediately if "Remember Me" is checked
+                setTimeout(() => { 
+                    window.location.href = "/welcome"; 
+                }, 1000);
+            }
+        } 
+        else {
             const errorMessage = await response.text();
-            alert(errorMessage); // Show the specific error message
+            alert(errorMessage);
         }
     } catch (error) {
         alert("Server unreachable, please try again later.");
@@ -86,3 +118,13 @@ loginForm.addEventListener('submit', async function (e) {
         }, 1000);
     }
 });
+
+
+// // Check session status every second (optional)
+// setInterval(async () => {
+//     const response = await fetch('/check-session');
+//     if (!response.ok) {
+//         alert('Session expired, logging you out.');
+//         window.location.href = '/';  // Redirect to the login page
+//     }
+// }, 1000); // Check every second
